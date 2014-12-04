@@ -2,7 +2,7 @@
 // ensure script is loaded
 console.log("what");
 
-// add tooltip
+// add tooltip, may need to float it
 function createTooltip(coordinates, parentEl) {
 	var newDiv = document.createElement('div');
 	newDiv.style.backgroundColor = 'blue';
@@ -12,6 +12,8 @@ function createTooltip(coordinates, parentEl) {
 	newDiv.style.left = coordinates.left + 'px';
 	newDiv.style.zIndex = 30;
 	newDiv.setAttribute('title', 'what up?');
+	//newDiv.style.cssFloat = 'left';
+	newDiv.style.position = 'absolute';
 
 	parentEl.appendChild(newDiv);
 	console.log('what up')
