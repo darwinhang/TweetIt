@@ -14,6 +14,12 @@ function getCoords(rangeObject) {
 
 // on mouseup, if there is something selected, then it should be consoled out
 function selected() {
+	// remove the previous span
+	var existingAnchor = document.getElementById('tweet-anchor');
+	if (existingAnchor) {
+		existingAnchor.remove();
+	}
+
 	// need to collect the data and send it as a message
 	var highlighted = window.getSelection();
 	var highlightedText = highlighted.toString();
@@ -22,15 +28,9 @@ function selected() {
 		return;
 	} 
 	else {
-		// remove the previous span
-		var existingAnchor = document.getElementById('tweetAnchor');
-		if (existingAnchor) {
-			existingAnchor.remove();
-		}
-		
 		var range = window.getSelection().getRangeAt(0);
 		var tweetAnchor = document.createElement('span');
-		tweetAnchor.setAttribute('id', 'tweetAnchor');
+		tweetAnchor.setAttribute('id', 'tweet-anchor');
 		range.insertNode(tweetAnchor);
 		var what = range.getBoundingClientRect();
 		var left = what.left, bottom = what.bottom;
