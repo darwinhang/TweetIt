@@ -16,7 +16,7 @@ Another issue I'm having is that
 ### 12/4/2014 
 I guess it is already the 4th. It looks like I can use stylesheets, so I don't have to go through all the trouble of styling using JS. http://stackoverflow.com/questions/11553600/how-to-inject-css-using-content-script-file-in-chrome-extension 
 
-I should also probabdly move to jQuery, since I'll probably also be using a jQuery tooltip library: 
+I should also probably move to jQuery, since I'll probably also be using a jQuery tooltip library: 
 http://iamceege.github.io/tooltipster/#getting-started
 
 If I use a tooltip plugin, I might be better off adding a span element around the first highlighted word. 
@@ -30,4 +30,8 @@ It may be easier to add an empty span in front of the first selected word, rathe
 
 my very slightly modified version: http://jsfiddle.net/zcccqxaq/2
 
-okay, i found a potential issue with this. the text gets modified when the span is removed. That may just be the way the console interprets the activity though, since the layout remains unchanged since whitespace is ignored in HTML. I need to go to bed.
+okay, i found a potential issue with this. the text gets modified when the span is removed. That may just be the way the console interprets the activity though, since the layout remains unchanged since whitespace is ignored in HTML. I need to go to bed. 
+
+
+### 12/19/2014 
+I actually just want to insert a span at the beginning of the selected text.
