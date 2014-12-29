@@ -14,6 +14,11 @@ function getCoords(rangeObject) {
 
 // on mouseup, if there is something selected, then it should be consoled out
 function selected() {
+
+	var existingAnchor = document.getElementById('tweet-anchor');
+	if (existingAnchor) {
+		tweetIt();
+	}
 	// need to collect the data and send it as a message
 	var highlighted = window.getSelection();
 	var highlightedText = highlighted.toString();
@@ -22,12 +27,6 @@ function selected() {
 		return;
 	} 
 	else {
-		// remove the previous span
-		var existingAnchor = document.getElementById('tweet-anchor');
-		if (existingAnchor) {
-			existingAnchor.remove();
-		}
-
 		var range = window.getSelection().getRangeAt(0);
 		var tweetAnchor = document.createElement('span');
 		tweetAnchor.setAttribute('id', 'tweet-anchor');
@@ -55,14 +54,15 @@ function tweetIt() {
 	chrome.storage.local.get('quote',  function(result) {
 		console.log('whatup:', result.quote);
 	});
+
+	// remove the previous span
+	var existingAnchor = document.getElementById('tweet-anchor');
+	if (existingAnchor) {
+		existingAnchor.remove();
+	}
+
 }
 
 document.body.addEventListener('mouseup' , selected.bind(this), false);
 
-// bind a click handler to the tweet-anchor
-// need to bind it to the tweet-anchor
-// var tweetAnchor = document.getElementById('tweet-anchor');
-// tweetAnchor.addEventListener("click", function() {
-//   console.log('what');
-//   tweetIt();
-// }, false);
+
