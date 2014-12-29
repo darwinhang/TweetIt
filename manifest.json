@@ -4,6 +4,14 @@
 	"version": "0.0.1",
 	"description": "Tweet text from webpages as quotes",
 
+	"permissions": [
+		"storage"
+	],
+
+	"web_accessible_resources": [
+		"Twitter_log_white_32.png"
+	],
+
 	"content_scripts": [{
         "matches": ["http://*/*", "https://*/*"],
         "js": ["content.js"],

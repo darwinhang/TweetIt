@@ -34,4 +34,14 @@ okay, i found a potential issue with this. the text gets modified when the span 
 
 
 ### 12/19/2014 
-I actually just want to insert a span at the beginning of the selected text.
+I actually just want to insert a span at the beginning of the selected text. 
+
+I was able to get the spans added. Now I just need to figure out how to add the persistent tooltip. 
+
+### 12/20/2014 
+Today, I'm going to get the tooltip finished, trying to use CSS to style it. 
+
+Then, I'll have to decide how to handle tweet submission. 
+
+### 12/21/2014 
+Yesterday, I couldn't find the time to work on this, so I'll continue tonight.
