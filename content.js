@@ -48,11 +48,11 @@ function selected() {
 function tweetIt() {
 	console.log('pressed')
 	var url = 'https://twitter.com/intent/tweet';
-	var params = {};
 
 	// Add selected text
 	chrome.storage.local.get('quote',  function(result) {
-		console.log('whatup:', result.quote);
+		var quoteText = result.quote.split(' ').join('%20');
+		console.log('quoteText', quoteText)
 	});
 
 	// remove the previous span
