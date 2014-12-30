@@ -45,3 +45,6 @@ Then, I'll have to decide how to handle tweet submission.
 
 ### 12/21/2014 
 Yesterday, I couldn't find the time to work on this, so I'll continue tonight.
+
+### 12/29/2014 
+It looks like I have most of the functionality working, the problem is that I'm having issues with the click handlers on the tweet it button.

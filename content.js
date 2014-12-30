@@ -36,7 +36,7 @@ function selected() {
 		var left = what.left, bottom = what.bottom;
 		console.log('quote:', highlightedText)
 		console.log('page:', currentPage)
-		chrome.storage.local.set({'quote': highlightedText}, function(){
+		chrome.storage.local.set({'quote': highlightedText, 'url': currentPage}, function(){
 			console.log('set quote')
 		});
 		//localStorage.setItem('quote', highlightedText);
@@ -45,14 +45,17 @@ function selected() {
 
 
 // function to handle creating the Twitter web intent
+// this funciton might actually be best done by a seperate pop-up
 function tweetIt() {
 	console.log('pressed')
 	var url = 'https://twitter.com/intent/tweet';
 
 	// Add selected text
-	chrome.storage.local.get('quote',  function(result) {
-		var quoteText = result.quote.split(' ').join('%20');
+	chrome.storage.local.get(['quote', 'url'],  function(result) {
+		var quoteText = encodeURIComponent(result.quote);
 		console.log('quoteText', quoteText)
+		var fullURI = url + '?text=' + quoteText + '&url=' + encodeURIComponent(result.url);
+		window.open(fullURI)
 	});
 
 	// remove the previous span
