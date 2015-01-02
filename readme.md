@@ -12,8 +12,8 @@ So I was thinking about how I always want to quote things I read on web pages an
 - [x] load extenstion in local browser
 - [x] output highlighted text to console with extension loaded
 - [ ] twitter logo tooltip hover at end of highlighted section of text
-- [ ] send highlighted text and page url to background page for processing
-- [ ] shorten the url of the page with highlighted text (http://dev.bitly.com/get_started.html)
+- [ ] ~~send highlighted text and page url to background page for processing~~
+- [ ] ~~shorten the url of the page with highlighted text (http://dev.bitly.com/get_started.html)~~
 - [x] Research OAuth in Chrome apps and with Twitter (Can use Twitter Web Intents)
 - [x] work out signing in to post on twitter (Use Twitter Web Intents)
 - [ ] settings to disable the tweet tooltip if desired

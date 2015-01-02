@@ -2,18 +2,30 @@
 // ensure script is loaded
 console.log("tweet it loaded");
 
-// on mouseup, if there is something selected, then it should be consoled out
-function selected() {
-	var highlighted = window.getSelection();
-	var highlightedText = highlighted.toString();
-	var currentPage = window.location.href;
-	if (highlightedText.length <= 0) {
-		// remove the previous span
+function removeAnchor() {
+	var found = false;
+	do {
 		var existingAnchor = document.getElementById('tweet-anchor');
 		if (existingAnchor) {
 			existingAnchor.remove();
+			found = true;
+		} 
+		else {
+			found = false;
 		}
-		return;
+	} while (found);
+	return false;
+}
+
+function selected(ev) {
+	console.log(ev.currentTarget)
+	var highlighted = window.getSelection();
+	var highlightedText = highlighted.toString();
+	var currentPage = window.location.href;
+	removeAnchor();
+
+	if (highlightedText.length <= 0) {
+		return false;
 	} 
 	else {
 		var range = window.getSelection().getRangeAt(0);
@@ -26,14 +38,16 @@ function selected() {
 		console.log('quote:', highlightedText)
 		console.log('page:', currentPage)
 		chrome.storage.local.set({'quote': highlightedText, 'url': currentPage}, function(){
-			console.log('set quote')
+			console.log('set quote and url')
 		});
 	}
+	return false;
 }
 
 // function to handle creating the Twitter web intent
 // this funciton might actually be best done by a seperate pop-up
-function tweetIt() {
+function tweetIt(ev) {
+	console.log('tweettarget', ev.currentTarget);
 	console.log('pressed')
 	var url = 'https://twitter.com/intent/tweet';
 
@@ -46,13 +60,12 @@ function tweetIt() {
 	});
 
 	// remove the previous span
-	var existingAnchor = document.getElementById('tweet-anchor');
-	if (existingAnchor) {
-		existingAnchor.remove();
-	}
+	removeAnchor();
 
+	ev.stopPropagation();
+	console.log(ev.bubbles);
 }
 
-document.body.addEventListener('mouseup' , selected.bind(this), false);
+document.body.addEventListener('click' , selected);
 
 
