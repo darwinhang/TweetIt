@@ -36,16 +36,24 @@ function selected(ev) {
 	return false;
 }
 
-// function to handle creating the Twitter web intent
-// this funciton might actually be best done by a seperate pop-up
+function limitQuote(quote) {
+	if (quote.length >= 100) {
+		var newQuote =  quote.slice(0, 97);
+		return newQuote + '...'
+	}
+	return quote;
+}
+
+
 function tweetIt(ev) {
 	var url = 'https://twitter.com/intent/tweet';
 
 	// Add selected text
 	chrome.storage.local.get(['quote', 'url'],  function(result) {
-		var quoteText = encodeURIComponent(result.quote);
+		// looks like the escape double quotes are being converted back into the strings in the web intent url
+		var quoteText = encodeURIComponent('"' + limitQuote(result.quote) + '"');
 		var fullURI = url + '?text=' + quoteText + '&url=' + encodeURIComponent(result.url);
-		window.open(fullURI)
+		window.open(fullURI);
 	});
 
 	// remove the previous span

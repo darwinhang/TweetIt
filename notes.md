@@ -48,3 +48,6 @@ Yesterday, I couldn't find the time to work on this, so I'll continue tonight.
 
 ### 12/29/2014 
 It looks like I have most of the functionality working, the problem is that I'm having issues with the click handlers on the tweet it button. I think my problem is that I need to add an event listener to the tweet-anchor span. I might need to add an event listener on the span while creating the element and then just pass that as a message to an event script.
+
+### 01/01/2015 
+I've gotten most of the things I wanted to get done. The only thing left now is styling the tooltip, i.e. making it look like a tooltip.
