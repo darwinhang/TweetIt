@@ -16,3 +16,5 @@ So I was thinking about how I always want to quote things I read on web pages an
 ## Todo 
 - [ ] Style the tooltip
 - [ ] Allow users to disable the extension on a page (remember these settings)
+- [ ] Add tests
+- [ ] Add CI
