@@ -1,4 +1,4 @@
-https://travis-ci.org/winious/TweetIt.svg
+[![Build Status](https://travis-ci.org/winious/TweetIt.svg?branch=master)](https://travis-ci.org/winious/TweetIt)
 
 So I was thinking about how I always want to quote things I read on web pages and tweet them. I thought about creating a chrome extension for it. Then I saw this functionality was available in Medium and thought it would be a simple way to learn a little about chrome extensions before I tackle Chrome apps.
 
