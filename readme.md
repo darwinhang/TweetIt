@@ -18,10 +18,10 @@ So I was thinking about how I always want to quote things I read on web pages an
 ## Run Tests
 1. Install gulp `npm install -g gulp`
 2. Install node.js packages `npm install`
-3. Run tests `gulp test`
+3. Run tests `npm test`
 
 ## Todo 
 - [ ] Style the tooltip
 - [ ] Allow users to disable the extension on a page (remember these settings)
 - [x] Add tests
-- [ ] Add CI
+- [x] Add CI

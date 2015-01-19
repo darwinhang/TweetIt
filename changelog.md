@@ -5,5 +5,5 @@
 - Change Log
 - Gulp.js for running tasks and future build processes
 - Tests (Jasmine with Karma test runner)
-- License
+- License (MIT)
 - Continuous Integration (via Travis CI)
