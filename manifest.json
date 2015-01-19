@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "TweetIt",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Tweet text from webpages as quotes",
 
 	"permissions": [
@@ -15,6 +15,6 @@
 	"content_scripts": [{
         "matches": ["http://*/*", "https://*/*"],
         "js": ["content.js"],
-        "css": ["crazystyles.css"]
+        "css": ["styles/crazystyles.css"]
     }]
 }

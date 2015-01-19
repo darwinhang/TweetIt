@@ -1,3 +1,5 @@
+https://travis-ci.org/winious/TweetIt.svg
+
 So I was thinking about how I always want to quote things I read on web pages and tweet them. I thought about creating a chrome extension for it. Then I saw this functionality was available in Medium and thought it would be a simple way to learn a little about chrome extensions before I tackle Chrome apps.
 
 ## Functionality
@@ -13,8 +15,13 @@ So I was thinking about how I always want to quote things I read on web pages an
 2. Then open a new chrome tab and type `chrome://extensions/`
 3. Click on "Load unpacked extension" and select the folder that contains this code (the manifest.json file)
 
+## Run Tests
+1. Install gulp `npm install -g gulp`
+2. Install node.js packages `npm install`
+3. Run tests `gulp test`
+
 ## Todo 
 - [ ] Style the tooltip
 - [ ] Allow users to disable the extension on a page (remember these settings)
-- [ ] Add tests
+- [x] Add tests
 - [ ] Add CI
