@@ -15,7 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'content.js',
+      'ext/content.js',
+      'ext/TweetIt.js',
       'tests/*.js'
     ],
 
