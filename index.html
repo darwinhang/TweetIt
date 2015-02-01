@@ -21,6 +21,21 @@
   </head>
 
   <body>
+    <style>
+      span#tweet-anchor::after {
+      	content: "Tweet It";
+      	background-color: RGB(217, 0, 210);
+      	z-index: 999;
+      	position: absolute;
+      	margin-top: -30px;
+      	margin-left: -20px;
+      	border-radius: 3px;
+      }
+      
+      #tweet-anchor {
+      	cursor: pointer;
+      }
+    </style>
     <a id="forkme_banner" href="https://github.com/winious/TweetIt">View on GitHub</a>
     <div class="shell">
 
@@ -104,7 +119,6 @@
               
               		selected: function (ev) {
               			var highlighted = window.getSelection();
-              			console.log(highlighted)
               			var highlightedText = highlighted.toString();
               			var currentPage = window.location.href;
               			this.removeAnchor();
