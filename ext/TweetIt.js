@@ -19,7 +19,6 @@ var TweetIt = (function() {
 
 		selected: function (ev) {
 			var highlighted = window.getSelection();
-			console.log(highlighted)
 			var highlightedText = highlighted.toString();
 			var currentPage = window.location.href;
 			this.removeAnchor();
@@ -53,6 +52,8 @@ var TweetIt = (function() {
 			var quoteText = encodeURIComponent('"' + this.limitQuote(selectedText.quote) + '"');
 			var fullURI = url + '?text=' + quoteText + '&url=' + encodeURIComponent(selectedText.url);
 			window.open(fullURI);
+
+			this.removeAnchor();
 		},
 
 		removeAnchor: function () {
